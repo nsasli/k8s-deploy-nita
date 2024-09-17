@@ -39,4 +39,3 @@ Authors
 Nita Septiani
 
 
-Thank you
