@@ -36,4 +36,5 @@ Monitoring
 Prometheus is used for monitoring the application's performance and Grafana is used for visualizing the metrics.
 
 Authors
-Nita S
+Nita Septiani
+
