@@ -6,18 +6,19 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Kubeconfig
-      run: |
-        echo "${{ secrets.KUBE_CONFIG }}" > ~/.kube/config
+      - name: Set up Kubeconfig
+        run: |
+          echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
 
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl apply -f nginx-deployment.yaml
-        kubectl apply -f mysql-deployment.yaml
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f your-deployment-file.yaml  # Ubah ini dengan file deployment Anda
+          kubectl apply -f your-service-file.yaml  # Ubah ini dengan file service Anda
